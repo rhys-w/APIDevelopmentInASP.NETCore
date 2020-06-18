@@ -1,0 +1,22 @@
+How Does HTTP Work?
+
+Request sent, containing:
+- verb, the action to take 	e.g. POST
+- headers, information about the request
+- content, optionally asked for
+
+Example:
+VERB		POST
+HEADERS		Content Length: 11
+CONTENT		Hello World
+
+Get a response back, containing:
+- status code
+- headers
+- content
+
+Example:
+STATUS CODE	201
+HEADERS		Content Type: text
+CONTENT 	Hello World
+
