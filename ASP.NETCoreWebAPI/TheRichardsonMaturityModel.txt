@@ -1,0 +1,38 @@
+The Richardson Maturity Model:
+
+Level 0 - The Swamp of POX
+
+	Plan Old XML.
+	Http is used for remote interaction.
+	The rest of the protocol isn't used as it should be.
+	Using Http but only as a transfer protocol.
+	RPC-style implementation.
+	
+	e.g. one api you can POST to (/host/api)
+
+Level 1 - Resources
+
+	Each resource is mapped to a URI.
+	Multiple URI's.
+
+	e.g.	1. POST 	/api/authors
+			2. POST 	/api/authors/{id}
+
+Level 2 - Verbs
+
+	Correct Http verbs are used.
+	Correct status codes are used.
+	Removes unnecessary variation.
+
+	e.g.	1. GET		/api/authors	returns 200 Ok (authors)
+			2. GET		/api/authors	returns 201 Created (author)
+	
+Level 3 - Hypermedia
+
+	The API supports Hypermedia as the Engine of Application State (HATEOAS).
+	HATEOAS is the most commonly skipped REST constraint.
+	When skipped, an API isn't actually REST.
+	Introduces discoverability.
+
+	e.g.	1. GET		/api/authors	returns 200 Ok (authors 
+										+ links that drive application state)
