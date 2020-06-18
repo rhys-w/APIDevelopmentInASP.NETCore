@@ -158,3 +158,52 @@ Paging:
 		prevPage: "api/sites?page=3"
 		results: [...]
 	}
+
+Error Handling:
+- Use when it is useful for the user
+- Use when it is NOT dangerous for security
+	e.g. 'Username and password don't match' is dumb.
+		A message that lets a hacker know they've hit a correct username makes their life easier
+
+Caching:
+Get
+- Request: Get, Version=lat_xyz, Hello World
+- Response: 304 Not Modified
+- Lets the client ask the server if it has the latest version without getting and sending back.
+
+Put
+- For concurrency (letting multiple people use the system at once)
+- Request: Put, If-Match=last_xyz, Hell World
+- Checks if the last_xyz data is the same as what is on the server
+- Make the change if it is
+- If it isn't, someone else must have changed it since
+- Response: 412 Precondition failed
+
+Entity Tags (ETags)
+- Strong and Weak Caching Support
+- Strong - when things are not likely to change (in weeks)
+- Weak - short lived, likely to change regularly
+
+ETag Examples
+- Weak: W/"12345"
+- Strong: "12345"
+
+GET Example
+Request with If-None-Match...
+Get:			/api/games/2
+Accept:			application/json
+Host:			localhost:8863
+If-None-Match:	"12345"
+
+Repsonse if not modified...
+304 Not Modified
+
+PUT/DELETE Example
+Request with If-Match...
+Put:			/api/games/2
+Accept:			application/json
+Host:			localhost:8863
+If-Match:		"12345"
+
+Response if modified...
+412 Precondition Failed
