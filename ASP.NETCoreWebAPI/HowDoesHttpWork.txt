@@ -277,3 +277,159 @@ How:
 	- Pro: Can version the payload as well as the API call itself
 	- Con: Requires a lot more development maturity to create and maintain
 
+Security.
+
+Locking Down Your API:
+- Planning for locking down
+- API's and security
+- Cross domain security
+- Auth
+- Security concerns.
+
+Design Decision: Do I need to secure my API?
+- Are you using private or personalised data?
+- Are you sending sensitive data across the 'wire'?
+- Are you using credentialis in any way?
+- Do you want to protect against overuse abuse of your server?
+	... secure it.
+
+Threats:
+- Threats to API aren't always Hackers.
+- Threats include:
+	- Users/Hackers
+	- Eavesdroppers (packet sniffers)
+	- Hackers/Personnel (Intrusion and Physical Security)
+
+Protect your API:
+- Server Infrastructure. Outside of API security scope (locks on doors).
+- Secure In-Transit
+	- SSL is almost always appropriate
+	- Cost of SSL is worth the expense
+- Secure the API itself
+	- Cross Origin Security - knowing which website is writing code to your website.
+	- Authorization and Authentication. 
+		- Knowing who you are
+		- Knowing what you are allowed to to (sub set of total possible endpoints)
+
+Cross Domain Security
+- Prevent cross-site-scripting
+- By default not allowed
+	- Limited by browser
+- Public or Private API?
+	- Public: 
+		- Should allow.
+	- Private: 
+		- Consider for partners. 
+		- Browser should not most of the work.
+
+Cross Origin Resource Sharing (CORS)
+- Allows control finely grained control
+- Domain, resource and verb control
+- Only limits browser, NOT APP.
+
+How does CORS work?
+- Cross-Origin request 
+	-> Browser Requests Access 
+		-> Server Replies with Rules
+			-> Browser Issues with CORS Header
+
+Authorization and Authentication
+
+Authentication:
+- "Are you allowed into the building?"
+- Who you are (person/app/server/organisation)
+- Info to determine identity
+	- credentials (username, password, claims)
+
+Authorization:
+- "Are you allowed into this room in the building?"
+- What you can do
+- Rules about rights (e.g. Roles, Rights)
+
+Authentication Types for APIs
+- App Authentication
+	- Identifying an app for your API
+	- Authenticatin as the developer
+	- Typically done with: AppID + Key
+- User Authentication (traditional)
+	- Identifying user (by credentials, claims, OAuth (or other 3rd party auth))
+
+Authentication Approaches:
+- Cookies 
+	- easiest
+	- common
+	- easily forgable
+	- not safe
+- Basic Auth
+	- easy to implement
+	- not entirely secure, unless enforcing SSL
+	- still risky. Much less with SSL but still risky
+	- sends credentials on every request => every request is at risk
+- Token Based Auth
+	- secure
+	- simple
+	- most common
+	- industry standard tokens are easy
+	- expires faster than cookies
+	- token expiration means multiple requests made with same token, 
+		reducing the number of at risk requests with credentials.
+
+More Info On Token:
+
+	Client										Server
+	--------------> sends credentials ---------->
+	<------- returns token <----------------------
+	series of chars
+	client never needs to decode
+	------------------> includes token on -------->
+						subsequent calls
+	<--------------- validates token ---------------
+
+Most common Token: JSON Web Tokens (JWTs)
+- Industry standard
+- Self-contained, small and complete
+	- user information
+	- claims
+	- validation signature
+
+OAuth:
+- Very important IF you need this level of security
+- Never try to implement this by hand
+- Use trusted third-party to identify
+- App using third party never gets user's credentials
+	- User authenticates with third party
+	- Use toekn to confirm identity
+- Doesn't leak credentials to 'yet another application'
+- "I have a google/facebook/microsoft account, lets use that"
+
+		Developer				API					User
+
+	Requests API Key--->
+						Supplies API Key and
+							shared secret
+			<-------------
+	Requests Request
+			Token
+			----------->
+						Validates and Returns
+								Token
+					<------------
+	Redirects to API's
+		Auth URL
+			----------->
+						Displays Authorization UI
+									-------------->
+													User Confirms 
+													Authorization
+									<----------------
+						Redirects Back To Developer
+			<-------------------
+	Request Access Token
+	Via OAuth & Request
+			Token
+			-------------------->
+						Returns Access Token
+							(with timeout)
+			<-------------------
+	Uses API with Access
+	Token until Timeout
