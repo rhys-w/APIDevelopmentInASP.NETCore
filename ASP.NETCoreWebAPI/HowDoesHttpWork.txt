@@ -20,3 +20,69 @@ STATUS CODE	201
 HEADERS		Content Type: text
 CONTENT 	Hello World
 
+The Server:
+- Stateless
+- This enables scaling
+
+Requests:
+GET:	Request Resource
+POST:	Create Resource
+PUT:	Update Resource
+PATCH:  Update Partial Resource e.g. Part X of resource Y
+DELETE: Delete Resource
+(there are more)
+
+Headers:
+- Metadata
+- Name value pairs
+
+Header examples:
+- Content Type: The format of content
+- Content Length: Size of content
+- Auth: Who is making the call
+- Accept: What type(s) can accept
+(there are lots more)
+
+Content Concerning Request:
+- HTML, CSS, JavaSript, XML, JSON
+- Content is not valid with some verbs
+- Information to help fulfill request
+- Binary and blobs common (e.g. .jpg)
+
+Response Codes:
+- 100-199: Informational
+- 200-299: Success
+- 300-399: Redirection
+- 400-499: Client Errors
+- 500-599: Server Errors
+
+What is REST?
+- REpresentational State Transfer
+- Separation of Client and Server
+- Server Requests are Stateless
+- Cacheable Requests
+- Uniform Interface
+
+
+API DESIGN:
+
+Api Design
+- Nouns are Good, Verbs are Bad
+- Prefer Nouns e.g. customers, invoivces, products, employees
+- Nouns contain resources 
+- Prefer plurals e.g. customers not customer.
+
+Resources (What are they?):
+- People, Invoices, Products
+- Nouns you want to expose through the API
+- A resource can be a complex object within a given context
+	(Not necessarily just one entity)
+
+Identifiers in URI's
+- Use unique identifiers
+- Does not have to be 'primary keys'
+
+Query Strings
+- Use for non-resource properties
+	e.g. sorts, pages, formats
+
