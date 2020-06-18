@@ -1,0 +1,20 @@
+Https Methods - Interacting with Resources through HTTP Methods
+
+Method		Payload				Samply URI					Response Payload
+
+GET			-					/api/authors				author collection
+								/api/authors/{authorId}		single author
+
+POST		single author		/api/authors				single author
+
+PUT			single author		/api/authors/{authorId}		single author or empty
+
+PATCH		JsonPatchDocument	/api/authors/{authorId}		single author or empty
+			on author
+
+DELETE		-					/api/authors/{authorId}		-
+
+HEAD		-					/api/authors				-
+								/api/authors/{authorId}		-
+
+OPTIONS		-					/api/...					-

@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Solution Items", "{6346ABA5-9351-41C1-91AA-9DED05DD9C1A}"
 	ProjectSection(SolutionItems) = preProject
 		HowDoesHttpWork.txt = HowDoesHttpWork.txt
+		HttpMethods.txt = HttpMethods.txt
 		ResourceNamingGuidelines.txt = ResourceNamingGuidelines.txt
 		Routing.txt = Routing.txt
 		TheRichardsonMaturityModel.txt = TheRichardsonMaturityModel.txt
