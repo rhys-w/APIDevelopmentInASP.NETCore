@@ -1,0 +1,48 @@
+Routing
+
+	Routing matches a request URI to an action on a controller.
+
+app.UseRouting()
+
+	- Marks the position in the middleware pipeline where a 
+		routing decision is made.
+
+app.UseEndpoints()
+
+	- Marks the position in the middleware pipeline where the selected 
+		endpoint is executed.
+
+Example of Middleware
+
+	Authentication:
+		app.UseRouting();
+		app.UseAuthorization();
+		app.UseEndpoints(endpoints => { // map endpoints });
+
+Mapping Endpoints - How?
+
+	1. Convention based routing:
+		
+		Endpoints are added to actions on a controller following a convention.
+
+		app.UseRouting();
+		app.UseAuthorization();
+		app.UseEndpoint(endpoints => {
+			endpoints.MapControllerRoute(
+				name: "default",
+				pattern: "{controller=Home}/{action=Index}/{id?}");
+			endpoints.MapRazorPages();
+		});
+
+	2. Attribute-based Routing
+		
+		No conventions are applied.
+		They are setup through attributes instead.
+		Attributes are added at controller and action level: [Route], [HttpGet], ...
+
+		app.UseRouting();
+		app.UseAuthorization();
+		app.UseEndpoints(endpoints => {
+			endpoints.MapControllers();
+		});
+	
