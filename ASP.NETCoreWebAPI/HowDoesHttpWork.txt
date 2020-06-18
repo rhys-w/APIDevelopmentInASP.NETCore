@@ -239,19 +239,41 @@ Goal:
 
 How:
 - Prioritize clients. This should be easy for them, not you (if you have to choose).
+
 - Versioning in the URI Path
 	- Example: /api/v2/customers
 	- Pro: Clear to clients which version they are using
 	- Con: Tends to be brittle. Clients have to change API's to use.
+
 - Versioning with the Query String
 	- Example: /api/customers?v=2.0
 	- Pro: Versioning is optionally included
 	- Con: Too easy for clients to miss needing the version
+
 - Versioning with Headers
 	- Example:
-		Get				/api/camps
-		Host			lostlhost:44388
+		Get:			/api/camps
+		Host:			localhost:44388
 		Content-Type:	application/json
 		X-Version:		2.0
 	- Pro: Separates versioning from the rest of the API (Decoupled)
 	- Con: Requires more sophisticated developer to manipulate headers
+
+- Versioning with Accept Header
+	- Example:
+		Get:			/api/camps
+		Host:			localhost:44388
+		Content-Type:	application/json
+		Accept:			application/json;version=2.0
+	- Pro: Accept header keeps version client is using.
+	- Con: Less discoverable that query strings. Also requires sophistication of devs.
+
+- Versioning with Content Type (Most complex of all given)
+	- Example: 
+		Get:			/api/camps
+		Host:			localhost:45388
+		Content-Type:	applcation/vnd.yourapp.camp.v1+json
+		Accept:			applcation/vnd.yourapp.camp.v1+json
+	- Pro: Can version the payload as well as the API call itself
+	- Con: Requires a lot more development maturity to create and maintain
+
