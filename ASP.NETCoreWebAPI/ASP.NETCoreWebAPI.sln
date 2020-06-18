@@ -8,9 +8,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Sol
 		HowDoesHttpWork.txt = HowDoesHttpWork.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Beginner Projects", "1. Beginner Projects", "{6D418CED-55DC-4089-AE73-D8FFA1C7A5ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseLibrary.API", "CourseLibrary.API\CourseLibrary.API.csproj", "{DCA3CDE3-FB69-428E-8015-4DBC8593EEFC}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCA3CDE3-FB69-428E-8015-4DBC8593EEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA3CDE3-FB69-428E-8015-4DBC8593EEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA3CDE3-FB69-428E-8015-4DBC8593EEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA3CDE3-FB69-428E-8015-4DBC8593EEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DCA3CDE3-FB69-428E-8015-4DBC8593EEFC} = {6D418CED-55DC-4089-AE73-D8FFA1C7A5ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4FF0DA07-8A71-4757-AFA8-98691B26EFC7}
