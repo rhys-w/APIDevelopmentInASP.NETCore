@@ -212,3 +212,46 @@ Functional APIs:
 - Should be the exception rather than the rule WHEN designing a REST API.
 - If they regularly come up, look at whether you are developing a RPC layer
 	instead of an API layer.
+
+Async API's:
+- Some APIs aren't RESTful in nature
+- They need long-life, polling
+- Non-REST solutions are useful
+
+Async API Solutions to consider
+- Comet
+- gRPC
+- SignalR
+- Firebase
+- Socket.IO
+
+Versioning For Your API:
+
+Should you version your API?
+- Once you publish, it is set in stone.
+- Users rely on the API.
+- Decisions have to consider how to not break code users have written against your API.
+
+Goal:
+- Write an API that can evolve, without breaking clients.
+- Needs to support both new and old.
+- Planning and design upfront has prevented as much requirement for versioning as possible.
+
+How:
+- Prioritize clients. This should be easy for them, not you (if you have to choose).
+- Versioning in the URI Path
+	- Example: /api/v2/customers
+	- Pro: Clear to clients which version they are using
+	- Con: Tends to be brittle. Clients have to change API's to use.
+- Versioning with the Query String
+	- Example: /api/customers?v=2.0
+	- Pro: Versioning is optionally included
+	- Con: Too easy for clients to miss needing the version
+- Versioning with Headers
+	- Example:
+		Get				/api/camps
+		Host			lostlhost:44388
+		Content-Type:	application/json
+		X-Version:		2.0
+	- Pro: Separates versioning from the rest of the API (Decoupled)
+	- Con: Requires more sophisticated developer to manipulate headers
