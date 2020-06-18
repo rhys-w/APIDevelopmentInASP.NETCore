@@ -2,41 +2,40 @@ Resource Naming Guidelines
 
 1. Nouns: Things, not actions.
 	
-	Bad API		/api/getauthors
-	Good API	/api/authors
-	Good API	/api/authors/{authorId}
+	Bad API			/api/getauthors
+	Good API		/api/authors
+	Good API		/api/authors/{authorId}
 
 2. Gain predictability through consistency.
 
-	Bad API		/api/something/somethingelse/employees
-	Good API	/api/employees
+	Bad API			/api/something/somethingelse/employees
+	Good API		/api/employees
 
-	Bad API		/api/id/{employeeId}
-	Good API	/api/employees/{employeeId}
+	Bad API			/api/id/{employeeId}
+	Good API		/api/employees/{employeeId}
 
 3. Represent hierarchy when naming resources
 
-	Good API	/api/authors/{authorId}/courses
-				Getting the courses of the author
+	Good API		/api/authors/{authorId}/courses
+					Getting the courses of the author
 
-	Good API	/api/authors/{authorId}/courses/{courseId}
+	Good API		/api/authors/{authorId}/courses/{courseId}
 
 4. Filters, sorting orders, etc. aren't resources
 
-	Bad API		/api/authors/orderby/name
-	Good API	/api/authors?orderby=name
+	Bad API			/api/authors/orderby/name
+	Good API		/api/authors?orderby=name
 
 5. Exceptions: RPC-style calls
 
 	RPC style calls don't easily map to pluralized resource names
 	
-	Bad API		/api/authors/{authorId}/pagetotals 
-				- implies returning a collection
+	Bad API			/api/authors/{authorId}/pagetotals 
+					- implies returning a collection
 
-	Bad API		/api/authorpagetotals/{id}
-				Much closer to a 'resource'
-				Requires a pragmatic approach to solve the exception.
+	Bad API			/api/authorpagetotals/{id}
+					Much closer to a 'resource'
+					Requires a pragmatic approach to solve the exception.
 
-	Exception API
-				/api/authors/{authorId}/totalamountofpages
+	Exception API	/api/authors/{authorId}/totalamountofpages
 
