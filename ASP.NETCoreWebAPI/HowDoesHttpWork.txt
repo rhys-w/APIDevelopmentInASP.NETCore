@@ -207,3 +207,8 @@ If-Match:		"12345"
 
 Response if modified...
 412 Precondition Failed
+
+Functional APIs:
+- Should be the exception rather than the rule WHEN designing a REST API.
+- If they regularly come up, look at whether you are developing a RPC layer
+	instead of an API layer.
