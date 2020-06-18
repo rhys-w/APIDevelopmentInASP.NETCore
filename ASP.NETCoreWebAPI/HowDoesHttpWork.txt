@@ -86,3 +86,35 @@ Query Strings
 - Use for non-resource properties
 	e.g. sorts, pages, formats
 
+
+Verbs and URI's
+
+How do I do Verbs then?
+
+Resource: Customers
+
+/customers
+Get: Get List
+Post: New Customer
+Put: Update Batch (rare)
+Delete: Error
+
+/customers/123
+Get: Get Item
+Post: Error
+Put: Update Item
+Delete: Delete Item
+
+Idempotency
+- Operations result in same side effect
+- Get should return the same data, assuming no data has changed
+- Put should make the changes if needed
+- Patch should make the change if needed
+- Delete should delete the resource if it exists
+- EXCEPTION: Post is not idempotent
+
+Hypermedia:
+- An idea as part of what REST wants you to do
+- Allows results to be self describing
+- Allows programmatic navigation of API endpoints
+- Adds complexity
