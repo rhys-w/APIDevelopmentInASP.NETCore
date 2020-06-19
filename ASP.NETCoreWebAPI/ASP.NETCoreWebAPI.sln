@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Sol
 		ErrorsAndFaults.txt = ErrorsAndFaults.txt
 		HowDoesHttpWork.txt = HowDoesHttpWork.txt
 		HttpMethods.txt = HttpMethods.txt
+		MethodSafetyAndMethodIdempotency.txt = MethodSafetyAndMethodIdempotency.txt
 		ResourceNamingGuidelines.txt = ResourceNamingGuidelines.txt
 		Routing.txt = Routing.txt
 		SatusCodes.txt = SatusCodes.txt
