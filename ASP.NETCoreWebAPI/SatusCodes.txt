@@ -10,3 +10,36 @@ Response Codes:
 	- 300-399: Redirection
 	- 400-499: Client Errors
 	- 500-599: Server Errors
+
+Level 200 - Success:
+	200 - Ok.
+	201 - Created.
+	204 - No content.
+
+Level 300 - Redirection (not common).
+
+Level 400 - Client Mistakes
+	400 - Bad request.
+	401 - Unauthorized.
+	403 - Forbidden.
+	404 - Not found.
+	405 - Method not allowed.		
+			e.g. post to /api/authors, when only get exists.
+	406 - Not acceptable.
+			e.g. requests xml, api only supports json and no default.
+	409 - Conflict.
+			e.g. creating a resource that already exists
+			e.g. updating out of date resource
+			e.g. concurrency issues
+	415 - Unsupported media type
+			e.g. provided data has a media type, 
+				415 if that data's media type is not supported.
+	422 - Unprocessable entity
+			e.g. good media type (so not 415), 
+				syntax ok (so 400 not okay), 
+				symantic mistake (validation).
+
+Level 500 - Server Mistakes
+	500 - Internal server error.
+			e.g. Something is wrong with the server, 
+				user just has to try again later.

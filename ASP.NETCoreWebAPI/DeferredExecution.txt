@@ -1,0 +1,13 @@
+Deferred Execution
+
+The query variable never holds the query results. 
+It only stores the query commands.
+
+Execution of the query is deferred until the query is iterated over.
+
+Query execution occurs sometime after query is constructed.
+
+To cause execution, use...
+- foreach loop
+- ToList(), ToArray(), ToDictionary()
+- Singleton queries (average, count, first)

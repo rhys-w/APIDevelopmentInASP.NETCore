@@ -1,0 +1,11 @@
+Errors vs Faults.
+
+Errors
+	- Consumer passes invalid data to API, API rejects.
+	- Level 400 status codes.
+	- Do not contribute to API availability.
+
+Faults
+	- API fails to return a response to a valid request.
+	- Level 500 status codes.
+	- Do contribute to API availability.
