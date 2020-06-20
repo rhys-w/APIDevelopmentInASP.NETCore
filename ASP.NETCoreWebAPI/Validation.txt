@@ -1,0 +1,30 @@
+Validating Data and Reporting Validation Errors
+
+Validating in ASP.NET Core
+
+	In ASP.NET Core, rules are defined through 
+	- Data annotations
+	- IValidatableObject
+
+Defining Validation Rules
+
+	Validate input, not output
+
+Checking Validation Rules
+
+	ModelState
+	- A dictionary containing both the...
+		- model state
+		- model binding validation
+	- Contains a collection of error messages for each property value submitted
+	
+	ModelState.IsValid()
+
+Reporting Validation Errors
+
+	422 Unprocessable Entity
+		- Server understood content
+		- Server understood syntax
+		- Server could NOT process the data
+
+	Response body should contain validation errors
