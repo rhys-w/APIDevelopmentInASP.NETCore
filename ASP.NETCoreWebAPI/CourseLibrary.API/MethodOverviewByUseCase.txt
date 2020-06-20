@@ -1,0 +1,75 @@
+﻿HTTP Method Overview by Use Case.
+
+Reading Resources:
+	GET						/api/authors
+		- Send						-
+		- Success			200		[{author},{author}]
+		- Problem			404
+
+	GET						/api/authors/{authorId}
+		- Request Body				-
+		- Success			200		{author}
+		- Problem			404
+
+	DELETE					/api/authors/{authorId}
+		- Send						-
+		- Success			204
+		- Problem			404
+
+	DELETE					/api/authors		
+	(Rarely Implemented)
+		- Success			204
+		- Problem			404
+
+Creating Resources (Server):
+	POST					/api/authors	
+		- Send				{author}
+		- Success			201 {author}
+		- Problem			404
+
+	POST					/api/authors/{authorId}
+	(Can never be successful)
+		- Send				{author}
+		- If Exists			404
+		- If Does Not Exist	409
+
+	POST					/api/authorcollections
+		- Send				{authorCollection}
+		- Success			201 {authorCollection}
+		- Problem			404
+
+Creating Resources (Consumer):
+	PUT						/api/authors/{authorId}
+		- Send				{author}
+		- Success			{author}
+
+	PATCH					/api/authors/{authorId}
+		- Send				{JsonPatchDocument on author}
+		- Success			201 {author}
+
+Updating Resources (full):
+	PUT						/api/authors/{authorId}
+		- Send				{author}
+		- Success			200 {author}
+		- Success			204
+		- Problem			404
+
+	PUT						/api/authors
+	(Rarely Implemented)
+		- Send				[{author}, {author}]
+		- Success			204
+		- Problem			404
+
+Updating Resources (partial)
+	PATCH					/api/authors/{author}
+		- Send				{JsonPatchDocument on author}
+		- Success			200 {author}
+		- Success			204
+		- Problem			404
+
+	PATCH					/api/authors
+	(Rarely Implemented)
+		- Send				{JsonPatchDocument on authors}
+		- Success			200 [{author}, {author}]
+		- Success			204
+		- Problem			404

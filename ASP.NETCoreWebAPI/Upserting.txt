@@ -1,0 +1,11 @@
+Upserting.
+
+Server responsible for URI generation?
+	- PUT request must go to an existing URI.
+	- If it doesn't exist, 404 returned.
+	- POST must be used for creation as URI cannot be known in advance.
+
+Consumer responsible for URI generation?
+	- PUT request can be sent to an unexisting URI
+	- If it doesn't exist, resource is created.
+	- PUT can be used for creation: Upserting.
