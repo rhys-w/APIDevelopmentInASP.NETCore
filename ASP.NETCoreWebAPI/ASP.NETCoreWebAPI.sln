@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Sol
 		ResourceNamingGuidelines.txt = ResourceNamingGuidelines.txt
 		Routing.txt = Routing.txt
 		SatusCodes.txt = SatusCodes.txt
+		TheRepositoryPattern.txt = TheRepositoryPattern.txt
 		TheRichardsonMaturityModel.txt = TheRichardsonMaturityModel.txt
 		Validation.txt = Validation.txt
 	EndProjectSection
