@@ -1,0 +1,10 @@
+PUT vs. PATCH.
+
+PUT
+	- For FULL updates
+	- All resources fields are either overwritten or set to their default values.
+
+PATCH
+	- For partial updates
+	- Allows sending over change sets via JsonPatchDocument
+
