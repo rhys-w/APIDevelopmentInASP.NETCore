@@ -1,0 +1,55 @@
+Security.
+
+Locking Down Your API:
+- Planning for locking down
+- API's and security
+- Cross domain security
+- Auth
+- Security concerns.
+
+Design Decision: Do I need to secure my API?
+- Are you using private or personalised data?
+- Are you sending sensitive data across the 'wire'?
+- Are you using credentialis in any way?
+- Do you want to protect against overuse abuse of your server?
+	... secure it.
+
+Threats:
+- Threats to API aren't always Hackers.
+- Threats include:
+	- Users/Hackers
+	- Eavesdroppers (packet sniffers)
+	- Hackers/Personnel (Intrusion and Physical Security)
+
+Protect your API:
+- Server Infrastructure. Outside of API security scope (locks on doors).
+- Secure In-Transit
+	- SSL is almost always appropriate
+	- Cost of SSL is worth the expense
+- Secure the API itself
+	- Cross Origin Security - knowing which website is writing code to your website.
+	- Authorization and Authentication. 
+		- Knowing who you are
+		- Knowing what you are allowed to to (sub set of total possible endpoints)
+
+Cross Domain Security
+- Prevent cross-site-scripting
+- By default not allowed
+	- Limited by browser
+- Public or Private API?
+	- Public: 
+		- Should allow.
+	- Private: 
+		- Consider for partners. 
+		- Browser should not most of the work.
+
+Cross Origin Resource Sharing (CORS)
+- Allows control finely grained control
+- Domain, resource and verb control
+- Only limits browser, NOT APP.
+
+How does CORS work?
+- Cross-Origin request 
+	-> Browser Requests Access 
+		-> Server Replies with Rules
+			-> Browser Issues with CORS Header

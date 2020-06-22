@@ -1,0 +1,14 @@
+Paging:
+
+- Lists should support paging
+
+- Query strings are commonly used:
+	/api/sites?page=1&page_size=25
+
+- Use wrappers to imply paging:
+	{
+		totalResults: 255,
+		nextPage: "api/sites?page=5"
+		prevPage: "api/sites?page=3"
+		results: [...]
+	}

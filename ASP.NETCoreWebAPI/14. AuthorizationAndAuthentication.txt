@@ -1,0 +1,100 @@
+Authorization and Authentication
+
+Authentication:
+- "Are you allowed into the building?"
+- Who you are (person/app/server/organisation)
+- Info to determine identity
+	- credentials (username, password, claims)
+
+Authorization:
+- "Are you allowed into this room in the building?"
+- What you can do
+- Rules about rights (e.g. Roles, Rights)
+
+Authentication Types for APIs
+- App Authentication
+	- Identifying an app for your API
+	- Authenticatin as the developer
+	- Typically done with: AppID + Key
+- User Authentication (traditional)
+	- Identifying user (by credentials, claims, OAuth (or other 3rd party auth))
+
+Authentication Approaches:
+- Cookies 
+	- easiest
+	- common
+	- easily forgable
+	- not safe
+- Basic Auth
+	- easy to implement
+	- not entirely secure, unless enforcing SSL
+	- still risky. Much less with SSL but still risky
+	- sends credentials on every request => every request is at risk
+- Token Based Auth
+	- secure
+	- simple
+	- most common
+	- industry standard tokens are easy
+	- expires faster than cookies
+	- token expiration means multiple requests made with same token, 
+		reducing the number of at risk requests with credentials.
+
+More Info On Token:
+
+	Client										Server
+	--------------> sends credentials ---------->
+	<------- returns token <----------------------
+	series of chars
+	client never needs to decode
+	------------------> includes token on -------->
+						subsequent calls
+	<--------------- validates token ---------------
+
+Most common Token: JSON Web Tokens (JWTs)
+- Industry standard
+- Self-contained, small and complete
+	- user information
+	- claims
+	- validation signature
+
+OAuth:
+- Very important IF you need this level of security
+- Never try to implement this by hand
+- Use trusted third-party to identify
+- App using third party never gets user's credentials
+	- User authenticates with third party
+	- Use toekn to confirm identity
+- Doesn't leak credentials to 'yet another application'
+- "I have a google/facebook/microsoft account, lets use that"
+
+		Developer				API					User
+
+	Requests API Key--->
+						Supplies API Key and
+							shared secret
+			<-------------
+	Requests Request
+			Token
+			----------->
+						Validates and Returns
+								Token
+					<------------
+	Redirects to API's
+		Auth URL
+			----------->
+						Displays Authorization UI
+									-------------->
+													User Confirms 
+													Authorization
+									<----------------
+						Redirects Back To Developer
+			<-------------------
+	Request Access Token
+	Via OAuth & Request
+			Token
+			-------------------->
+						Returns Access Token
+							(with timeout)
+			<-------------------
+	Uses API with Access
+	Token until Timeout

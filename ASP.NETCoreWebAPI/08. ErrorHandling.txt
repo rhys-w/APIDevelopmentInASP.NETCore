@@ -1,0 +1,7 @@
+Error handling.
+
+Error Handling:
+- Use when it is useful for the user
+- Use when it is NOT dangerous for security
+	e.g. 'Username and password don't match' is dumb.
+		A message that lets a hacker know they've hit a correct username makes their life easier

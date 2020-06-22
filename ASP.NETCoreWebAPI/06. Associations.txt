@@ -1,0 +1,27 @@
+Associations:
+
+- Sub objects for existing API's
+	- e.g. invoices for a customer 
+		/api/customers/123/invoices
+	- e.g. ratings for a specific game 
+		/api/games/halo-3/ratings
+	- e.g. payments related to a specific invoice
+		/api/invoices/2003-01-24/payments
+
+- Should return lists with the same shape, in different scopes
+	/api/customers/123/invoices
+	/api/invoices
+	These both return a list of the same shape, just with different scopes
+
+- Endpoints can have multiple associations
+	/api/customers/123/invoices
+	/api/customers/123/payments
+	/api/customers/123/shipments
+
+- Search should use queries
+
+- Don't use associations to get things like...
+	- 'all customers in a state'
+		/api/customers?st=GA
+	- 'all customers with sales id in state'
+		/api/customers?st=GA&salesid=144

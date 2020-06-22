@@ -1,0 +1,40 @@
+API DESIGN:
+
+Api Design
+- Nouns are Good, Verbs are Bad
+- Prefer Nouns e.g. customers, invoivces, products, employees
+- Nouns contain resources 
+- Prefer plurals e.g. customers not customer.
+
+Resources (What are they?):
+- People, Invoices, Products
+- Nouns you want to expose through the API
+- A resource can be a complex object within a given context
+	(Not necessarily just one entity)
+
+Identifiers in URI's
+- Use unique identifiers
+- Does not have to be 'primary keys'
+
+Query Strings
+- Use for non-resource properties
+	e.g. sorts, pages, formats
+
+
+Verbs and URI's
+
+How do I do Verbs then?
+
+Resource: Customers
+
+/customers
+Get: Get List
+Post: New Customer
+Put: Update Batch (rare)
+Delete: Error
+
+/customers/123
+Get: Get Item
+Post: Error
+Put: Update Item
+Delete: Delete Item

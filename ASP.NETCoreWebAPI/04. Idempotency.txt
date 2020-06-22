@@ -1,0 +1,9 @@
+Idempotency.
+
+Idempotency
+- Operations result in same side effect
+- Get should return the same data, assuming no data has changed
+- Put should make the changes if needed
+- Patch should make the change if needed
+- Delete should delete the resource if it exists
+- EXCEPTION: Post is not idempotent

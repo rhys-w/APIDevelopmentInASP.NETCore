@@ -1,0 +1,13 @@
+Async API's.
+
+Async API's:
+- Some APIs aren't RESTful in nature
+- They need long-life, polling
+- Non-REST solutions are useful
+
+Async API Solutions to consider
+- Comet
+- gRPC
+- SignalR
+- Firebase
+- Socket.IO

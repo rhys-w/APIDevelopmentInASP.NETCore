@@ -1,0 +1,7 @@
+Hypermedia.
+
+Hypermedia:
+- An idea as part of what REST wants you to do
+- Allows results to be self describing
+- Allows programmatic navigation of API endpoints
+- Adds complexity
