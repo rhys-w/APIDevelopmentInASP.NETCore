@@ -1,0 +1,12 @@
+Cache Invalidation:
+
+A lot is automated:
+	- Responses go stale
+	- ETags get updated
+
+Not always sufficient:
+	- Resource manipulation can have an effect on other resources
+		- Updating a course (on its own) affects the resources resource
+		- If you updated a course in a cached courses resource, it is out of date.
+
+CDNs allow for cache invalidation via easy to configure rules and easy to use SDKs

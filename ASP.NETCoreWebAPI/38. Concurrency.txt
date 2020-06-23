@@ -1,0 +1,77 @@
+Supporting Concurrency:
+
+Supporting Concurrency in a RESTful World:
+
+------------------------------------------------------------------------------------
+Problem Scanrio:
+
+Client 1				Client 2				API			|	Notes
+(Kevin)					(Sven)								|
+															|
+get author by ID ------------------------------->			|	First client gets
+	<--------------------------------------------			|	author for edit
+															|
+															|
+						get author by id ------->			|	Second client gets
+							<--------------------			|	author for edit
+															|
+						put author by id ------->			|	Second client submits
+							<--------------------			|	their changes
+															|	
+put athor by ID -------------------------------->			|	First client submits
+	<--------------------------------------------			|	their changes
+
+															|	Second client's
+															|	changes are lost.
+
+------------------------------------------------------------------------------------
+
+Concurrency Strategies:
+
+1.	Pessimistic
+2.	Optimistic
+
+Pessimistic Concurrency:
+
+	- Resource is locked while being edited
+	- While locked, it cannot be modified by another client
+	
+	- Not possible in REST (goes against statelessness)
+
+Optimistic Concurrency:
+
+	- Token is returned together with the resource
+	- The update cna happen as long as the token is still valid
+
+	- Possible in REST
+	- ETags can be used as validation tokens
+
+------------------------------------------------------------------------------------
+Solution Scanrio:
+
+Client 1				Client 2				API			|	Notes
+(Kevin)					(Sven)								|
+															|
+get author by ID ------------------------------->			|	First client gets
+	<---------------------------- 200 Ok, ETag: x			|	author for edit
+															|
+															|
+						get author by id ------->			|	Second client gets
+							<---- 200 Ok, ETag: x			|	author for edit
+															|
+						put author by id ------->			|	Second client submits
+						If-Match: "x"						|	their changes
+							<--- 200/204, ETag: y			|	
+															|
+															|	
+put athor by ID -------------------------------->			|	First client submits
+If-Match "x"												|	their changes
+	<-------------------- 412 Precondition failed			|	
+															|
+															|	Second client's
+															|	changes aren't lost.
+															|	Same applies for Patch
+------------------------------------------------------------------------------------
+
+Doesn't require a cache to achieve this.
+Just requires an ETag generating component.

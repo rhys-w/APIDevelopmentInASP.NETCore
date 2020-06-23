@@ -1,0 +1,54 @@
+Cache Stores & Content Delivery Networks:
+
+Ensure your API can return Cache-Control headers and supports 
+expiration/validation models
+
+Combine that with a cache server of CDN.
+
+Cache Stores
+
+	Most cache stores are full-blown cache servers, not pieces of middleware
+		- They often require deep knowledge of how to configure them.
+	
+	Private Caches
+		- Live on the client
+			- Xamarin app,s WPF apps,
+		- Example:	CacheCow.Client			https://github.com/aliostad/CacheCow
+	
+	Shared Caches
+		- Gateway or proxy caches
+		- Full-blown cache servers
+		- Examples:	Varnish					https://varnish-cache.org./
+					Apache Traffic Server	http://trafficserver.apache.org/
+					Squid					http://www.squid-cache.org/
+
+	Advantages:
+		- Open open source
+		- Often free to use
+		- Often supports invalidation mechanism (but not always, and can be harder to
+			setup than with a CDN)
+
+Alternative: Content Delivery Network
+
+	What it is:
+		A content delivery network (CDN) is a system of distributed servers (network)
+		that deliver pages and other web content to a suer, based on the geographic 
+		locations of the user, the origin of the webpage and the content delivery server.
+	
+	Most of the Internet runs on various CDN's
+		- Ensuring the fast loading speed of popular websites
+	
+	CDNs extensively use caching: HTTP cache
+		- No need to set up a cache server ourselves
+		- Provided out of the box and simply configured
+	
+	Popular CDN examples:
+		Azure CDN				https://azure.microsoft.com/en-in/services/cdn/
+		Cloudflare				https://www.cloudflare.com
+		Akamai					https://www.akarmai.com
+
+	Advantages:
+		CDNs allow for cache invalidation via easy to configure rules and easy to use SDKs
+
+	Disadvantages:
+		Cost. If you're expecting to cache a lot of responses, expect to pay for it.
