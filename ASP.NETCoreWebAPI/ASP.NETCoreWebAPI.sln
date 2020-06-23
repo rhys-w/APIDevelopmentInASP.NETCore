@@ -36,6 +36,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Sol
 		29. HATEOAS.txt = 29. HATEOAS.txt
 		30. MediaTypes.txt = 30. MediaTypes.txt
 		31. Caching.txt = 31. Caching.txt
+		32. Validators.txt = 32. Validators.txt
+		33. ExpirationAndValidation.txt = 33. ExpirationAndValidation.txt
+		34. Cache-ControlDirectives.txt = 34. Cache-ControlDirectives.txt
+		35. CachingSummary.txt = 35. CachingSummary.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Beginner Projects", "1. Beginner Projects", "{6D418CED-55DC-4089-AE73-D8FFA1C7A5ED}"

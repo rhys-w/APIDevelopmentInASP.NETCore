@@ -1,0 +1,49 @@
+Cache-Control Directives:
+
+Response:
+	
+	Freshness:			
+		max-age				- max-age before expiring (s)
+		
+		s-maxage			- overrides max-age for shared
+							- for different expiry in private and shared cache
+
+	Cache type:
+		public				- can be cached anywhere
+		
+		private				- intended for single user, not for shared cache
+
+	Validation:
+		no-cache			- don't use in subsequent requests without revalidating 
+
+		must-revalidate		- if response is stale, revalidate (force revalidation)
+
+		proxy-revalidate	- same as above but doesn't apply to private user caches
+
+	Other:
+		no-store			- cache must not store
+
+		no-transform		- cache doesn't transform media type of response body
+
+Request:
+	Freshness:
+		max-age				- max age client will accept
+
+		min-fresh			- minimum accepted val of current age + time in seconds 
+							- a response that will still be fresh in x seconds
+
+		max-stale			- client will accept response that has exceeded expiration
+							- must-revalidate uses this
+
+	Validation:
+		no-cache			- response shouldn't be used again without successful
+								revalidation with origin server
+
+	Other:
+		no-store			- same as response
+
+		no-transform		- same as response
+
+		only-if-cached		- client wants cache to return responses that are stored,
+								nothing from the origin server
+							- typically served when there is a poor connection

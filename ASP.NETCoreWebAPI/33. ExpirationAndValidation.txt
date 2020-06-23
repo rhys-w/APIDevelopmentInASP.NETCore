@@ -1,0 +1,42 @@
+Expiration and Validation Combined:
+
+	Private Cache
+		- As long as the response hasn't expired (isn't stale), that response
+			can be returned from the cache
+		
+		- e.g. We have a response to GetAuthors cached
+			- Has Cache-Control header for expiration checks
+			- Has Last-Modified and ETag header for validation checks
+			- New request sent and, if not stale, cached response is returned
+
+		- Reduces communication with the API (including response generation)
+		
+		- Reduces bandwidth requirements
+
+		- Hits API when expired (This is where Expiration ends and Validation starts)
+
+		- Just because it has expired doesn't mean it is invalid
+
+		- Without validation, API has to generate response at this point
+
+		- With validation... API checks validators
+			- if still Valid		304 Not Modified	(no costly response body)
+			- if not				generates response
+
+		- Bandwidth usage and response generation is potentially reduced even more
+		
+	Shared (public) cache
+		- As long as the response hasn't expired (isn't stale), that response
+			can be returned from the cache
+		
+		- Reduces bandwidth requirements between cache and API, DRAMATICALLY
+			reduces request to the API
+			
+			- Effect here is a lot more than private cache as cache is shared 
+				between potentially unlimited client instances
+		
+		- Hits API when expired
+
+		- With validation... API checks validators
+			- if still Valid		304 Not Modified	(no costly response body)
+			- if not				generates response

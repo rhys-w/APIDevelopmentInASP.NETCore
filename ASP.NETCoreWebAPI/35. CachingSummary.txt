@@ -1,0 +1,21 @@
+Caching Summary:
+
+Each response must state whether or not it can be cached
+
+Cache Types:
+	- Private or shared
+	- Depending on the type, a model can reduce bandwidth requirements and/or
+		network roundtrips
+
+Caching: Expiration Model
+	- Allows the server to state how long a response is considered fresh
+	- Uses the Cache-Control header
+
+Caching: Validation Model
+	- Used to valdiate the freshness of a response that's been cached
+	- Strong Validators - ETags
+	- Weak Validators - Last Modified headers, weak ETags
+		
+Implementation:
+	- Control the Cache-Control header with the ResponseCache attribute
+	- Store responses with the ResponseCaching middleware

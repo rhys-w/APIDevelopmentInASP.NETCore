@@ -25,3 +25,26 @@ Response Cache Attribute and Middleware
 
 	Cache store
 		- Response caching middleware
+
+Expiration Model
+
+	Expiration Header (Old)
+		- Expires: Sat, 21 Sep 2019 15:23:40 GMT
+		- Clocks must be synchronised
+		- Offers little control
+
+	Cache-Control header (New, Preferred)
+		- Cache-Control: public, max-age=60
+		- public = can be shared by both shared and private caches
+		- Preferred header for expiration
+
+Expiration Model and Cache Types
+	
+	Private Cache
+		- Reduces bandwidth requirements
+		- Less requests from cache to API
+
+	Shared (public) cache
+		- Doesn't save bandwidth between cache and API
+		- Drastically lowers requests to the API
+		- Drastically reduces the number of calls to the database

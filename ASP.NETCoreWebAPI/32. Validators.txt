@@ -1,0 +1,34 @@
+Validators:
+
+Validation Model
+	
+	Used to validate the 'freshness' of a response that's been cached
+	
+Strong Validators
+
+	Change if the body or headers of a response change
+
+	ETag (Entity Tag) response header
+		ETag: "123456789"
+
+	Can be used in any context (equality is guaranteed)
+
+Weak validators
+
+	Don't always change when the response changes (e.g. only on significant changes)
+
+	Last-Modified: Sat, 21 Sep 2019 15:23:40 GMT
+		(weak) (clocks must be synchronised)
+
+	ETag: "w/123456789" 
+		(weak ETag) (server decides when this changes)
+
+	Equivalence, but not equality
+
+Validation Model and Cache Types
+	
+	Private cache
+		- Reduces bandwidth requirements
+
+	Shared (public) cache
+		- Saves bandwidth between cache and API
