@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Sol
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Beginner Projects", "1. Beginner Projects", "{6D418CED-55DC-4089-AE73-D8FFA1C7A5ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLibrary.API", "CourseLibrary.API\CourseLibrary.API.csproj", "{94155038-39A8-431F-8750-959F29BFCE2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project1.CourseLibrary.API", "CourseLibrary.API\Project1.CourseLibrary.API.csproj", "{94155038-39A8-431F-8750-959F29BFCE2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
