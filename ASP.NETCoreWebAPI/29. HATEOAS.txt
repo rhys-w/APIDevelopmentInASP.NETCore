@@ -1,0 +1,5 @@
+Hypermedia as the Engine of Application State
+(HATEOAS):
+
+- Allows for self documenting API
+- Drives how to consume and use the API

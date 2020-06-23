@@ -31,6 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Sol
 		24. Validation.txt = 24. Validation.txt
 		25. DeferredExecution.txt = 25. DeferredExecution.txt
 		26. Upserting.txt = 26. Upserting.txt
+		27. ConstraintsOfREST.txt = 27. ConstraintsOfREST.txt
+		28. UniformInterfaceConstraint.txt = 28. UniformInterfaceConstraint.txt
+		29. HATEOAS.txt = 29. HATEOAS.txt
+		30. MediaTypes.txt = 30. MediaTypes.txt
+		31. Caching.txt = 31. Caching.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Beginner Projects", "1. Beginner Projects", "{6D418CED-55DC-4089-AE73-D8FFA1C7A5ED}"

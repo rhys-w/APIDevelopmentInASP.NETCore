@@ -1,0 +1,10 @@
+Media Types
+
+Vendor-specific Media Types:
+	- e.g. application/vnd.margin.hateoas+json
+	- Sections:
+		- Top-level type:		application
+		- Vendor prefix:		vnd
+		- Vendor identifier:	margin
+		- Media type name:		hateoas
+		- Suffix:				+json

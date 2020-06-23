@@ -1,0 +1,6 @@
+Uniform Interface Constraint.
+
+API and consumers share one technical interface:
+	- URI (resource identifier)
+	- HTTP method (interaction)
+	- Media type (json, xml, etc. reflected in response bodies)

@@ -1,0 +1,8 @@
+There are 6 constraints of REST (1 optional):
+
+1. Uniform Interface
+2. Client-Server
+3. Statelessness
+4. Layered System
+5. Cacheable
+6. Code On Demand (optional).

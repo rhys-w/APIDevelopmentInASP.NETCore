@@ -1,0 +1,27 @@
+Caching:
+
+Cache Types
+	
+	Client Cache:
+		- Lives on the client.
+		- Private cache - private because it is kept on the client
+
+	Gateway Cache
+		- Lives on server
+		- Shared cache
+		- Also called reverse proxy cache, http accelerator
+
+	Proxy Cache
+		- Lives on the network
+		- Shared cache
+
+
+Response Cache Attribute and Middleware
+
+	State for each resource whether or not it's cacheable
+		- Cache-Control: max-age=120
+		- ResponseCache attribute
+		- This is declarative/informational - it doesn't actually cache anything.
+
+	Cache store
+		- Response caching middleware
