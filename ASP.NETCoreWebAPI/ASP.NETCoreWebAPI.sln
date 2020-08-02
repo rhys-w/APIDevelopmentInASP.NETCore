@@ -49,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Beginner Projects", "1. 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project1.CourseLibrary.API", "CourseLibrary.API\Project1.CourseLibrary.API.csproj", "{94155038-39A8-431F-8750-959F29BFCE2D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLibrary.API", "..\..\..\..\Downloads\asp-dot-net-core-3-advanced-restful-concerns (1)\09\demos\start-end\CourseLibrary\CourseLibrary.API\CourseLibrary.API.csproj", "{3F8C057E-F173-468E-AE6A-03C3A0009C0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,12 +61,17 @@ Global
 		{94155038-39A8-431F-8750-959F29BFCE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94155038-39A8-431F-8750-959F29BFCE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94155038-39A8-431F-8750-959F29BFCE2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8C057E-F173-468E-AE6A-03C3A0009C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8C057E-F173-468E-AE6A-03C3A0009C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8C057E-F173-468E-AE6A-03C3A0009C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8C057E-F173-468E-AE6A-03C3A0009C0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{94155038-39A8-431F-8750-959F29BFCE2D} = {6D418CED-55DC-4089-AE73-D8FFA1C7A5ED}
+		{3F8C057E-F173-468E-AE6A-03C3A0009C0D} = {6D418CED-55DC-4089-AE73-D8FFA1C7A5ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4FF0DA07-8A71-4757-AFA8-98691B26EFC7}
